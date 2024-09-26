@@ -12,14 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.BOT_TOKEN }}
+        uses: actions/checkout@v4
 
       - name: Sync Labels
         uses: EndBug/label-sync@v2
         with:
           config-file: |
-              https://raw.githubusercontent.com/truecharts/.github/main/.github/labels.yaml
-          token: "${{ secrets.BOT_TOKEN }}"
+              https://raw.githubusercontent.com/dis-bzh/truecharts-.github/main/.github/labels.yaml
+          token: "${{ secrets.DIS_TRUECHARTS_GITHUB_TOKEN }}"
           delete-other-labels: true
